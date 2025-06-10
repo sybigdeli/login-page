@@ -1,0 +1,64 @@
+.button {
+  padding: 0.5rem 1rem; // معادل 8px 16px
+  border: none;
+  border-radius: 0.25rem; // معادل 4px
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem; // معادل 16px
+  background-color: #646cff; // آبی
+  color: #1a1a1a; // متن تیره
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    background-color: #7b83ff; // آبی روشن‌تر
+  }
+
+  &.primary {
+    background-color: #646cff;
+    color: #1a1a1a;
+
+    &:hover {
+      background-color: #7b83ff;
+    }
+  }
+
+  &.secondary {
+    background-color: #f0f0f0;
+    color: #333;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  &.loading {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

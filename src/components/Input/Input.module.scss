@@ -1,0 +1,87 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+
+  .label {
+    font-size: 0.875rem;
+    color: #333;
+  }
+
+  .input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: white;
+    color: #333;
+
+    &:focus {
+      outline: none;
+      border-color: #646cff;
+    }
+
+    &.error {
+      border-color: #ff4d4f;
+    }
+  }
+
+  .errorMessage {
+    color: #ff4d4f;
+    font-size: 0.75rem;
+  }
+}
+
+/* Dark Mode (System Preference) */
+@media (prefers-color-scheme: dark) {
+  .inputContainer {
+    .label {
+      color: #e0e0e0;
+    }
+
+    .input {
+      background-color: #2d2d2d;
+      border-color: #444;
+      color: #f0f0f0;
+
+      &:focus {
+        border-color: #7b83ff;
+      }
+
+      &.error {
+        border-color: #ff6b6b;
+      }
+    }
+
+    .errorMessage {
+      color: #ff6b6b;
+    }
+  }
+}
+
+/* Manual Dark Mode (via class) */
+.inputContainer.dark {
+  .label {
+    color: #e0e0e0;
+  }
+
+  .input {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #f0f0f0;
+
+    &:focus {
+      border-color: #7b83ff;
+    }
+
+    &.error {
+      border-color: #ff6b6b;
+    }
+  }
+
+  .errorMessage {
+    color: #ff6b6b;
+  }
+}
